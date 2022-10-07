@@ -112,7 +112,7 @@ public class PrisonFrame extends JFrame{
                 prisonPane.setTreeRoutes(prisonAlg.getTreeRouteNode(), prisonerResistance);
             } catch (Throwable e) {
                 JOptionPane.showMessageDialog(this, "Validación del archivo: \n"+e.getMessage());
-                System.out.println("Error al validar el archivo:"+e.getMessage());
+                System.err.println("Error al validar el archivo:"+e.getMessage());
             }
             
             
