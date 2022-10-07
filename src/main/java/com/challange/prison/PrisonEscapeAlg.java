@@ -84,7 +84,7 @@ public class PrisonEscapeAlg {
             return route;
         }
         
-        return null;
+        return new String[]{};
     }
     
     /**
@@ -118,7 +118,8 @@ public class PrisonEscapeAlg {
      */
     private Position getNextPosition(char direction, Position p,char[][] prision){
         
-        int x=p.getX(),y=p.getY();
+        int x=p.getX();
+        int y=p.getY();
         int h = prision.length;
         int w = prision[0].length;
         

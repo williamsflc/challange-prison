@@ -223,9 +223,7 @@ public class TreeRouteNode {
         }
         
         if(n.getChilds()!=null && !n.getChilds().isEmpty()){
-            n.getChilds().forEach(nch -> {
-                findEscapeRoutes(nch,salidas);
-            });
+            n.getChilds().forEach(nch -> findEscapeRoutes(nch,salidas));
         }
     }
     
