@@ -45,3 +45,16 @@ No se proprociona ninguna garantia sobre su funcionamiento
     3. prison-example-3-con-2-salidas.txt (Prision con 2 salidas)
     4. prison-example-4-grande.txt (Se elabora una prision más grande)
     5. prison-example-5-grande-sin-salida.txt
+
+
+
+Información adicional del código:
+
+La información se lee de una archivo de texto y se carga en una matriz de Java
+El análisis de rutas de realiza con una estructura de datos de árbol.
+El algoritmo se encuentra en el archivo: PrisonEscapeAlg.java
+La implementación de la estructura de árbol se encuentra en el archivo: TreeRouteNode.java
+Se crea un UI sencillo para facilitar el testeo, sin embargo es posible ejecutar la aplicación desde consola.
+
+
+
