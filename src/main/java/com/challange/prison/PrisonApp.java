@@ -37,13 +37,13 @@ import javax.swing.UnsupportedLookAndFeelException;
  */
 public class PrisonApp {
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
         
         
         if(args.length < 2){
             executeUI();
         }else{
-            executeCMD();
+            executeCMD(args);
         }
                 
         
@@ -99,8 +99,6 @@ public class PrisonApp {
         }
     }
 
-    private static void executeCMD() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+  
     
 }

@@ -78,12 +78,14 @@ public class PrisonPane extends JComponent{
         
         //pintamos la mas corta
         TreeRouteNode n = tree.findShorterEscapeRoute();
-        if(n.getRouteDistance()<= prisonerResistance){
-            do{
-                if(n.getType()==PrisonEscapeAlg.ROUTE){
-                    elements[n.getPosition().getY()][n.getPosition().getX()].setRouteState(PrisonElement.ROUTE_VALID);
-                }
-            }while((n = n.getParent()) != null);
+        if(n != null){
+            if(n.getRouteDistance()<= prisonerResistance){
+                do{
+                    if(n.getType()==PrisonEscapeAlg.ROUTE){
+                        elements[n.getPosition().getY()][n.getPosition().getX()].setRouteState(PrisonElement.ROUTE_VALID);
+                    }
+                }while((n = n.getParent()) != null);
+            }
         }
     }
     
