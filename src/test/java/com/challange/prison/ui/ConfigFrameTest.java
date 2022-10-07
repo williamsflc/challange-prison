@@ -56,6 +56,7 @@ public class ConfigFrameTest {
         System.out.println("################# showFrame ################# ");
         ConfigFrame instance = new ConfigFrame(null);
         instance.showFrame();
+        assertTrue(true);
     }
     
 }
