@@ -52,7 +52,7 @@ public class PrisonApp {
         
     }
 
-    private static void executeUI() {
+    public static void executeUI() {
         EventQueue.invokeLater(() -> {
             try {
                 UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
@@ -70,7 +70,7 @@ public class PrisonApp {
         });
     }
 
-    private static void executeCMD(String[] args) throws IOException, PrisonAlgorithmException{
+    public static void executeCMD(String[] args) throws IOException, PrisonAlgorithmException{
         Integer res = null;
         String def= null;
         try{

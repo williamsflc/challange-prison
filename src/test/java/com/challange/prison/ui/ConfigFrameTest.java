@@ -53,7 +53,7 @@ public class ConfigFrameTest {
      */
     @Test
     public void testShowFrame() {
-        System.out.println("showFrame");
+        System.out.println("################# showFrame ################# ");
         ConfigFrame instance = new ConfigFrame(null);
         instance.showFrame();
     }

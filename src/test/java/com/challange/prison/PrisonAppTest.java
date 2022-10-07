@@ -53,29 +53,31 @@ public class PrisonAppTest {
      */
     @Test
     public void testMain() throws Exception {
-        System.out.println("main");
+        System.out.println("################# main #################");
         String[] args = {"20","prison-example-1.txt", "test" };
         PrisonApp.main(args);
         
     }
     
-    @Test
-    public void testMainUI() throws Exception {
-        System.out.println("main");
-        String[] args = {};
-        PrisonApp.main(args);
-        
-    }
+    
 
     /**
      * Test of log method, of class PrisonApp.
      */
     @Test
     public void testLog() {
-        System.out.println("log");
+        System.out.println("################# log #################");
         String message = "Log de prueba";
         Throwable err = null;
         PrisonApp.log(message, err);
     }
+    
+    @Test
+    public void testExecuteCMD() throws Exception{
+        System.out.println("################# execteCMD #################");
+        String[] args = {"20","prison-example-1.txt", "test" };
+        PrisonApp.executeCMD(args);
+    }
+    
     
 }
