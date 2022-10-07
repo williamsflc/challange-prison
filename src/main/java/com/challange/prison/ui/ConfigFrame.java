@@ -25,14 +25,14 @@ import java.text.ParseException;
  */
 public class ConfigFrame extends javax.swing.JFrame {
 
-    private final PrisonFrame parent;
+    private final PrisonFrame prisionFrame;
     
     /**
      * Creates new form ConfigFrame
      * @param p
      */
     public ConfigFrame(PrisonFrame p) {
-        this.parent = p;
+        this.prisionFrame = p;
         initComponents();
     }
 
@@ -116,14 +116,14 @@ public class ConfigFrame extends javax.swing.JFrame {
             PrisonApp.log(e.getMessage(), e);
         }
         
-        parent.setPrisonerResistance((Integer)jSpinner1.getValue());
+        prisionFrame.setPrisonerResistance((Integer)jSpinner1.getValue());
     }//GEN-LAST:event_jButton1ActionPerformed
 
    
     
     
     public void showFrame(){
-       this.jSpinner1.setValue(parent.getPrisonerResistance());
+       this.jSpinner1.setValue(prisionFrame.getPrisonerResistance());
        this.setTitle("Configuración");
        this.setLocationByPlatform(true);
        this.setVisible(true);
