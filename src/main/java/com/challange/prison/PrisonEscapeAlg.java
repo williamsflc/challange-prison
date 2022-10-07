@@ -40,7 +40,7 @@ public class PrisonEscapeAlg {
 
     public PrisonEscapeAlg(String definition, int prisonerResist) {
         try {
-            this.prision = readPrisionDefinition(definition);
+            this.prision = readDefinition(definition);
             this.prisionerResist = prisonerResist;
             this.treeRoute = createRoutesTree(prision, prisionerResist);
         } catch (PrisonAlgorithmException e) {

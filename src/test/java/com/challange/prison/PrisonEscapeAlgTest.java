@@ -100,7 +100,7 @@ public class PrisonEscapeAlgTest {
             { '|',   '_',   '_',   '_',   '|',   '_',   '_',   '_',   '|'},
             { '|',   '|',   '|',   '|',   '|',   '|',   '|',   '|',   '|'}
         };
-        char[][] result = PrisonEscapeAlg.readPrisionDefinition(str);
+        char[][] result = PrisonEscapeAlg.readDefinition(str);
         assertArrayEquals(expResult, result);
     }
     
