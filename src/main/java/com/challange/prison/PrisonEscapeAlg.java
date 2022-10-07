@@ -18,21 +18,21 @@ import java.util.List;
  */
 public class PrisonEscapeAlg {
     
-    public final static char PRISIONER = 'P';
-    public final static char WALL      = '|';
-    public final static char EXIT      = 'S';
-    public final static char ROUTE     = '_';
-    public final static char OUTSIDE   = 'O';
+    public static final char PRISIONER = 'P';
+    public static final char WALL      = '|';
+    public static final char EXIT      = 'S';
+    public static final char ROUTE     = '_';
+    public static final char OUTSIDE   = 'O';
     
-    public final static char GUARD_UP   = '^';
-    public final static char GUARD_DOWN = 'V';
-    public final static char GUARD_LEFT = '<';
-    public final static char GUARD_RIGHT= '>';
+    public static final char GUARD_UP   = '^';
+    public static final char GUARD_DOWN = 'V';
+    public static final char GUARD_LEFT = '<';
+    public static final char GUARD_RIGHT= '>';
     
-    public final static char UP    = 'U';
-    public final static char DOWN  = 'D';
-    public final static char LEFT  = 'L';
-    public final static char RIGHT = 'R';
+    public static final char UP    = 'U';
+    public static final char DOWN  = 'D';
+    public static final char LEFT  = 'L';
+    public static final char RIGHT = 'R';
     
     private char[][] prision;
     private int prisionerResist;
