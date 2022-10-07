@@ -123,7 +123,9 @@ public class ConfigFrame extends javax.swing.JFrame {
     
     
     public void showFrame(){
-       this.jSpinner1.setValue(prisionFrame.getPrisonerResistance());
+       if(prisionFrame!=null){
+            this.jSpinner1.setValue(prisionFrame.getPrisonerResistance());
+       }
        this.setTitle("Configuración");
        this.setLocationByPlatform(true);
        this.setVisible(true);
