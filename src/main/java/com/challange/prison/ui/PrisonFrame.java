@@ -16,6 +16,7 @@
  */
 package com.challange.prison.ui;
 
+import com.challange.prison.PrisonApp;
 import com.challange.prison.PrisonEscapeAlg;
 import com.challange.prison.object.PrisonAlgorithmException;
 import java.awt.HeadlessException;
@@ -28,8 +29,6 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -114,7 +113,7 @@ public class PrisonFrame extends JFrame{
                 prisonPane.setTreeRoutes(prisonAlg.getTreeRouteNode(), prisonerResistance);
             } catch (Throwable e) {
                 JOptionPane.showMessageDialog(this, "Validación del archivo: \n"+e.getMessage());
-                Logger.getLogger(getClass().getSimpleName()).log(Level.WARNING, e.getMessage());
+                PrisonApp.log(e.getMessage(), e);
             }
             
             

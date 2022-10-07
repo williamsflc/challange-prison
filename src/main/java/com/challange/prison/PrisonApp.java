@@ -24,6 +24,7 @@ import java.awt.Frame;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Arrays;
@@ -59,7 +60,7 @@ public class PrisonApp {
             try {
                 UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
             } catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException ex) {
-                Logger.getLogger(PrisonApp.class.getSimpleName()).log(Level.WARNING,ex.getMessage());
+                PrisonApp.log(ex.getMessage(), ex);
             }
             
             PrisonFrame frame = new PrisonFrame();
@@ -80,28 +81,38 @@ public class PrisonApp {
             res  = Integer.parseInt(args[0]);
             def = new String(Files.readAllBytes(Paths.get(args[1])));
         }catch(IOException | NumberFormatException err){
-            Logger.getLogger(PrisonApp.class.getName()).log(Level.SEVERE,"Forma de ejecución: challange-prison.jar <resistencia prisionero> <archivo con def de carcel>, ej: challange-prison.jar 5 prision.txt");
+            PrisonApp.log("Forma de ejecución: challange-prison.jar <resistencia prisionero> <archivo con def de carcel>, ej: challange-prison.jar 5 prision.txt", err);
             System.exit(0);
         }
         
+        PrintWriter salida = new PrintWriter(System.out);
+        
         PrisonEscapeAlg alg = new PrisonEscapeAlg(def, res);
-        System.out.println("Ejecute la opción deseada");
-        System.out.println("   1 = canEscape ");
-        System.out.println("   2 = shortestEscapeRoute ");
-        System.out.println(">> ");
+        salida.println("Ejecute la opción deseada");
+        salida.println("   1 = canEscape ");
+        salida.println("   2 = shortestEscapeRoute ");
+        salida.println(">> ");
         
         BufferedReader buff = new BufferedReader(new InputStreamReader(System.in));
         String opcion = buff.readLine();
         
         if("1".equals(opcion)){
-            System.out.println("Resultado canEscape: "+alg.canEscape());
+            salida.println("Resultado canEscape: "+alg.canEscape());
         } else if("2".equals(opcion)){
-            System.out.println("Resultado shorterEscapeRoute: "+Arrays.toString(alg.shorterEscapeRoute()));
+            salida.println("Resultado shorterEscapeRoute: "+Arrays.toString(alg.shorterEscapeRoute()));
         }else{
-            System.out.println("Opcion incorrecta");
+            salida.println("Opcion incorrecta");
         }
     }
 
   
+    
+    public static void log(String message, Throwable err){
+        if(err !=null){
+            Logger.getLogger(PrisonApp.class.getName()).log(Level.SEVERE,message,err);
+        }else{
+            Logger.getLogger(PrisonApp.class.getName()).log(Level.INFO, message);
+        }
+    }
     
 }

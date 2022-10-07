@@ -18,8 +18,6 @@ package com.challange.prison.ui;
 
 import com.challange.prison.PrisonApp;
 import java.text.ParseException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -27,7 +25,7 @@ import java.util.logging.Logger;
  */
 public class ConfigFrame extends javax.swing.JFrame {
 
-    private PrisonFrame parent;
+    private final PrisonFrame parent;
     
     /**
      * Creates new form ConfigFrame
@@ -115,7 +113,7 @@ public class ConfigFrame extends javax.swing.JFrame {
         try {
             jSpinner1.commitEdit();
         } catch (ParseException e) {
-            Logger.getLogger(PrisonApp.class.getName()).log(Level.SEVERE,"Error commiting the jspinner");
+            PrisonApp.log(e.getMessage(), e);
         }
         
         parent.setPrisonerResistance((Integer)jSpinner1.getValue());

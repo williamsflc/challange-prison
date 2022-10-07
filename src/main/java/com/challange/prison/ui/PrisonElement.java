@@ -16,11 +16,10 @@
  */
 package com.challange.prison.ui;
 
+import com.challange.prison.PrisonApp;
 import com.challange.prison.PrisonEscapeAlg;
 import java.awt.Dimension;
 import java.net.URL;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -64,7 +63,7 @@ public class PrisonElement extends JLabel{
             URL url = getClass().getResource("/img/"+icon);
             this.setIcon(new ImageIcon(url));
         } catch (Exception e) {
-            Logger.getLogger(getClass().getSimpleName()).log(Level.WARNING, e.getMessage());
+            PrisonApp.log(e.getMessage(), e);
         }
         
     }
@@ -83,7 +82,7 @@ public class PrisonElement extends JLabel{
             this.setIcon(null);
             this.setIcon(new ImageIcon(url));
         } catch (Exception e) {
-            Logger.getLogger(getClass().getSimpleName()).log(Level.WARNING, e.getMessage());
+            PrisonApp.log(e.getMessage(), e);
         }
         
     }
