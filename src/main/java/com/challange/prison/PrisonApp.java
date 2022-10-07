@@ -75,8 +75,7 @@ public class PrisonApp {
 
     private static void executeCMD(String[] args) throws IOException, PrisonAlgorithmException{
         Integer res = null;
-        String def  = null;
-        
+        String def= null;
         try{
             res  = Integer.parseInt(args[0]);
             def = new String(Files.readAllBytes(Paths.get(args[1])));
@@ -84,25 +83,11 @@ public class PrisonApp {
             PrisonApp.log("Forma de ejecución: challange-prison.jar <resistencia prisionero> <archivo con def de carcel>, ej: challange-prison.jar 5 prision.txt", err);
             System.exit(0);
         }
-        
-        PrintWriter salida = new PrintWriter(System.out);
-        
+
         PrisonEscapeAlg alg = new PrisonEscapeAlg(def, res);
-        salida.println("Ejecute la opción deseada");
-        salida.println("   1 = canEscape ");
-        salida.println("   2 = shortestEscapeRoute ");
-        salida.println(">> ");
+        System.out.println("canEscape: "+alg.canEscape());
+        System.out.println("shortestEscapeRoute: "+Arrays.toString(alg.shorterEscapeRoute()));
         
-        BufferedReader buff = new BufferedReader(new InputStreamReader(System.in));
-        String opcion = buff.readLine();
-        
-        if("1".equals(opcion)){
-            salida.println("Resultado canEscape: "+alg.canEscape());
-        } else if("2".equals(opcion)){
-            salida.println("Resultado shorterEscapeRoute: "+Arrays.toString(alg.shorterEscapeRoute()));
-        }else{
-            salida.println("Opcion incorrecta");
-        }
     }
 
   
