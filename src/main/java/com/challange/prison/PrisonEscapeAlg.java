@@ -206,7 +206,7 @@ public class PrisonEscapeAlg {
         n.setType(PRISIONER);
         n.setExit(false);
         n.setLeaf(false);
-        createRoutesTree(prision, n, presistance);
+        createRoutTree(prision, n, presistance);
         return n;
         
     }
@@ -221,7 +221,7 @@ public class PrisonEscapeAlg {
      * @param presistance
      * @throws PrisonAlgorithmException 
      */
-    private void createRoutesTree(char[][] prision, TreeRouteNode n, int presistance) throws PrisonAlgorithmException{
+    private void createRoutTree(char[][] prision, TreeRouteNode n, int presistance) throws PrisonAlgorithmException{
         
         if(n == null){
             return;
@@ -292,7 +292,7 @@ public class PrisonEscapeAlg {
                     TreeRouteNode nch = new TreeRouteNode(n, pos, n.getRouteDistance() + 1);
                     nch.setType(type);
                     n.addChild(nch);
-                    createRoutesTree(prision, nch, presistance);
+                    createRoutTree(prision, nch, presistance);
                 } catch (PrisonAlgorithmException e) {
                     throw new RuntimeException(e);
                 }
@@ -357,7 +357,7 @@ public class PrisonEscapeAlg {
      * @return 
      * @throws com.challange.prison.object.PrisonAlgorithmException 
      */
-    public static char[][] readPrisionDefinition(String str) throws PrisonAlgorithmException{
+    public static char[][] readDefinition(String str) throws PrisonAlgorithmException{
         
         str = str.toUpperCase();
         String validCharacters = " \r\n\t"+PRISIONER+WALL+EXIT+GUARD_DOWN+GUARD_LEFT+GUARD_RIGHT+GUARD_UP+ROUTE;
