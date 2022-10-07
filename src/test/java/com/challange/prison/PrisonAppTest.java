@@ -21,7 +21,6 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  *
@@ -50,11 +49,20 @@ public class PrisonAppTest {
 
     /**
      * Test of main method, of class PrisonApp.
+     * @throws java.lang.Exception
      */
     @Test
     public void testMain() throws Exception {
         System.out.println("main");
         String[] args = {"20","prison-example-1.txt", "test" };
+        PrisonApp.main(args);
+        
+    }
+    
+    @Test
+    public void testMainUI() throws Exception {
+        System.out.println("main");
+        String[] args = {};
         PrisonApp.main(args);
         
     }
