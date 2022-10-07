@@ -200,9 +200,6 @@ public class PrisonEscapeAlg {
         
         Position p = findPrisonerPosition(prision);
         
-        if(p == null){
-            throw new PrisonAlgorithmException("No se encontro prisionero en esta definicion");
-        }
         
         TreeRouteNode n = new TreeRouteNode(null,p,0);
         n.setType(PRISIONER);

@@ -66,7 +66,7 @@ public class PrisonElement extends JLabel{
             URL url = getClass().getResource("/img/"+icon);
             this.setIcon(new ImageIcon(url));
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("Error al obtener el recurso:"+e.getMessage());
         }
         
     }
@@ -85,7 +85,7 @@ public class PrisonElement extends JLabel{
             this.setIcon(null);
             this.setIcon(new ImageIcon(url));
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("Error al obtener el recurso:"+e.getMessage());
         }
         
     }
