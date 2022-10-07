@@ -126,7 +126,8 @@ public class PrisonEscapeAlg {
             case UP:   y=(p.getY() - 1 <  0) ? -1 : p.getY()-1; break;
             case DOWN: y=(p.getY() + 1 >= h) ? -1 : p.getY()+1; break;        
             case LEFT: x=(p.getX() - 1 <  0) ? -1 : p.getX()-1; break;
-            case RIGHT:x=(p.getX() + 1 >= w) ? -1 : p.getX()+1; break;        
+            case RIGHT:x=(p.getX() + 1 >= w) ? -1 : p.getX()+1; break; 
+            default: x=(p.getX() + 1 >= w) ? -1 : p.getX()+1; break;
         }
       
         if(x == -1 || y == -1){
@@ -249,6 +250,9 @@ public class PrisonEscapeAlg {
                 n.setExit(true);
                 break;
             case PRISIONER:
+                break;
+            default:
+                n.setComment("Nodo");
                 break;
         }
         
