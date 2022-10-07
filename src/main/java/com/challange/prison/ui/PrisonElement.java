@@ -17,13 +17,11 @@
 package com.challange.prison.ui;
 
 import com.challange.prison.PrisonEscapeAlg;
-import com.challange.prison.object.TreeRouteNode;
 import java.awt.Dimension;
-import java.io.InputStream;
 import java.net.URL;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import javax.imageio.ImageIO;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
@@ -66,7 +64,7 @@ public class PrisonElement extends JLabel{
             URL url = getClass().getResource("/img/"+icon);
             this.setIcon(new ImageIcon(url));
         } catch (Exception e) {
-            System.err.println("Error al obtener el recurso:"+e.getMessage());
+            Logger.getLogger(getClass().getSimpleName()).log(Level.WARNING, e.getMessage());
         }
         
     }
@@ -85,7 +83,7 @@ public class PrisonElement extends JLabel{
             this.setIcon(null);
             this.setIcon(new ImageIcon(url));
         } catch (Exception e) {
-            System.err.println("Error al obtener el recurso:"+e.getMessage());
+            Logger.getLogger(getClass().getSimpleName()).log(Level.WARNING, e.getMessage());
         }
         
     }

@@ -20,7 +20,6 @@ import com.challange.prison.PrisonEscapeAlg;
 import com.challange.prison.object.TreeRouteNode;
 import java.awt.GridLayout;
 import java.util.List;
-import javax.swing.BoxLayout;
 import javax.swing.JComponent;
 
 /**

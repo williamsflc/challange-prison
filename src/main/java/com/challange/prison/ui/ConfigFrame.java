@@ -16,6 +16,11 @@
  */
 package com.challange.prison.ui;
 
+import com.challange.prison.PrisonApp;
+import java.text.ParseException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Williams Lopez
@@ -109,8 +114,8 @@ public class ConfigFrame extends javax.swing.JFrame {
         setVisible(false);
         try {
             jSpinner1.commitEdit();
-        } catch (Exception e) {
-            System.out.println("Error commiting the jspinner");
+        } catch (ParseException e) {
+            Logger.getLogger(PrisonApp.class.getName()).log(Level.SEVERE,"Error commiting the jspinner");
         }
         
         parent.setPrisonerResistance((Integer)jSpinner1.getValue());

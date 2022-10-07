@@ -18,18 +18,20 @@ package com.challange.prison;
 
 import com.challange.prison.object.PrisonAlgorithmException;
 import com.challange.prison.ui.PrisonFrame;
-import com.challange.prison.ui.PrisonPane;
 import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.Frame;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Arrays;
-import javax.swing.JFrame;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+import javax.swing.WindowConstants;
 
 /**
  *
@@ -57,27 +59,28 @@ public class PrisonApp {
             try {
                 UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
             } catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException ex) {
+                Logger.getLogger(PrisonApp.class.getSimpleName()).log(Level.WARNING,ex.getMessage());
             }
             
             PrisonFrame frame = new PrisonFrame();
             frame.setTitle("Prison Challange UI - Frame");
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
             frame.setBackground(Color.WHITE);
             frame.setSize(800, 800);
-            frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+            frame.setExtendedState(Frame.MAXIMIZED_BOTH);
             frame.setVisible(true);
         });
     }
 
-    private static void executeCMD(String args[]) throws IOException, PrisonAlgorithmException{
+    private static void executeCMD(String[] args) throws IOException, PrisonAlgorithmException{
         Integer res = null;
         String def  = null;
         
         try{
             res  = Integer.parseInt(args[0]);
             def = new String(Files.readAllBytes(Paths.get(args[1])));
-        }catch(Throwable err){
-            System.out.println("Forma de ejecución: challange-prison.jar <resistencia prisionero> <archivo con def de carcel>, ej: challange-prison.jar 5 prision.txt");
+        }catch(IOException | NumberFormatException err){
+            Logger.getLogger(PrisonApp.class.getName()).log(Level.SEVERE,"Forma de ejecución: challange-prison.jar <resistencia prisionero> <archivo con def de carcel>, ej: challange-prison.jar 5 prision.txt");
             System.exit(0);
         }
         

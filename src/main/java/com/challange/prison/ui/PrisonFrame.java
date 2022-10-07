@@ -28,6 +28,8 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -112,7 +114,7 @@ public class PrisonFrame extends JFrame{
                 prisonPane.setTreeRoutes(prisonAlg.getTreeRouteNode(), prisonerResistance);
             } catch (Throwable e) {
                 JOptionPane.showMessageDialog(this, "Validación del archivo: \n"+e.getMessage());
-                System.err.println("Error al validar el archivo:"+e.getMessage());
+                Logger.getLogger(getClass().getSimpleName()).log(Level.WARNING, e.getMessage());
             }
             
             
